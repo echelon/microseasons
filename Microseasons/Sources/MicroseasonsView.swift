@@ -59,7 +59,9 @@ import ScreenSaver
 	public override func draw(_ rect: NSRect) {
 		guard let context = NSGraphicsContext.current()?.cgContext else { return }
 
-		context.setFillColor(boardView?.theme.backgroundColor.cgColor ?? NSColor.black.cgColor)
+        
+        context.setFillColor(NSColor.white.cgColor)
+		//context.setFillColor(boardView?.theme.backgroundColor.cgColor ?? NSColor.white.cgColor)
 		context.fill(bounds)
 	}
 
@@ -104,10 +106,10 @@ import ScreenSaver
 
 		let scale: CGFloat = isPreview ? 2 : 10
 
-		var board = Board(size: Size(width: Int(previousSize.width / scale), height: Int(previousSize.height / scale)))
+		/*var board = Board(size: Size(width: Int(previousSize.width / scale), height: Int(previousSize.height / scale)))*/
 
 		// Create 9 ants
-		let offset = Point(x: Int(Double(board.size.width) * 0.2), y: Int(Double(board.size.height) * 0.2))
+		/*let offset = Point(x: Int(Double(board.size.width) * 0.2), y: Int(Double(board.size.height) * 0.2))
 		let maxX = UInt32(Double(board.size.width) * 0.6)
 		let maxY = UInt32(Double(board.size.height) * 0.6)
 		for i in 1...preferences.numberOfAnts {
@@ -129,9 +131,9 @@ import ScreenSaver
 				}
 			}
 			board.noise = noise
-		}
+		}*/
 
-		let boardView = BoardView(board: board, scale: scale)
+		/*let boardView = BoardView(board: board, scale: scale)
 
 		// Add the board as a subview
 		boardView.translatesAutoresizingMaskIntoConstraints = false
@@ -143,7 +145,7 @@ import ScreenSaver
 			boardView.centerYAnchor.constraint(equalTo: centerYAnchor)
 		])
 
-		self.boardView = boardView
+		self.boardView = boardView*/
 		themeDidChange()
 	}
 

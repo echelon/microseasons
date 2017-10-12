@@ -40,11 +40,11 @@ struct LightTheme: Theme {
 
 struct DarkTheme: Theme {
 	var backgroundColor: NSColor {
-		return .black
+		return .white
 	}
 
 	var filledColor: NSColor {
-		return .white
+		return .black
 	}
 
 	var noiseColor: NSColor {
