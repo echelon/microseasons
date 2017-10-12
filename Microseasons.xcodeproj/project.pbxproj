@@ -105,7 +105,7 @@
 				218920D81F50F1B900B03FCE /* Support */,
 			);
 			name = microseasons;
-			path = "Langton’s Ant";
+			path = "Microseasons";
 			sourceTree = "<group>";
 		};
 		211873A31F50D8FE005F7DE7 /* Preview */ = {
@@ -209,7 +209,7 @@
 			dependencies = (
 			);
 			name = Microseasons;
-			productName = "Langton’s Ant";
+			productName = "Microseasons";
 			productReference = 211873911F50D8F1005F7DE7 /* Microseasons.saver */;
 			productType = "com.apple.product-type.bundle";
 		};
@@ -464,15 +464,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "Langton’s Ant/Support/LangtonsAnt.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Microseasons/Support/Microseasons.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 728TPZ87N6;
-				INFOPLIST_FILE = "$(SRCROOT)/Langton’s Ant/Support/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Microseasons/Support/Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.brand.mac.microseasons;
-				PRODUCT_MODULE_NAME = LangtonsAnt;
+				PRODUCT_MODULE_NAME = Microseasons;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -485,15 +485,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "Langton’s Ant/Support/LangtonsAnt.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Microseasons/Support/Microseasons.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 728TPZ87N6;
-				INFOPLIST_FILE = "$(SRCROOT)/Langton’s Ant/Support/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Microseasons/Support/Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.brand.mac.microseasons;
-				PRODUCT_MODULE_NAME = LangtonsAnt;
+				PRODUCT_MODULE_NAME = Microseasons;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
