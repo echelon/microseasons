@@ -25,7 +25,7 @@ extension Theme {
 
 struct LightTheme: Theme {
 	var backgroundColor: NSColor {
-		return .white
+		return .black
 	}
 
 	var filledColor: NSColor {

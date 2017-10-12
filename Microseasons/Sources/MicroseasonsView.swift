@@ -63,6 +63,10 @@ import ScreenSaver
         context.setFillColor(NSColor.white.cgColor)
 		//context.setFillColor(boardView?.theme.backgroundColor.cgColor ?? NSColor.white.cgColor)
 		context.fill(bounds)
+        
+        let _rect = CGRect(x: 40, y: 100, width: 100, height: 100)
+        
+        drawMyText(myText: "Wild geese return", textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 20 , inRect:_rect)
 	}
 
 
@@ -93,6 +97,17 @@ import ScreenSaver
 	public override func hasConfigureSheet() -> Bool {
 		return true
 	}
+    
+    func drawMyText(myText:String,textColor:NSColor, FontName:String, FontSize:CGFloat, inRect:CGRect){
+        
+        let textFont = NSFont(name: FontName, size: FontSize)!
+        let textFontAttributes = [
+            NSFontAttributeName: textFont,
+            NSForegroundColorAttributeName: textColor,
+            ] as [String : Any]
+        
+        myText.draw(in: inRect, withAttributes: textFontAttributes)
+    }
 	
 
 	// MARK: - Private
@@ -145,7 +160,9 @@ import ScreenSaver
 			boardView.centerYAnchor.constraint(equalTo: centerYAnchor)
 		])
 
+         
 		self.boardView = boardView*/
+        
 		themeDidChange()
 	}
 
@@ -159,7 +176,7 @@ import ScreenSaver
 	}
 
 	@objc private func themeDidChange() {
-		boardView?.theme = preferences.darkMode ? DarkTheme() : LightTheme()
+		//boardView?.theme = preferences.darkMode ? DarkTheme() : LightTheme()
 		setNeedsDisplay(bounds)
 	}
 
