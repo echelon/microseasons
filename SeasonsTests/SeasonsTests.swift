@@ -12,17 +12,26 @@ class SeasonsTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        // Setup code here.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        // Teardown code here.
         super.tearDown()
     }
     
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        var date = Seasons.getDate(1, 1)!
+        
+        var season = Seasons.getSeasonForDate(date)!
+        
+        NSLog("Season: " + season.english)
+        
+        
+        XCTAssert(season.english == "Wheat sprouts under snow")
     }
     
 }

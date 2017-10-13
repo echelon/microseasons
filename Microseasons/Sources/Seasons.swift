@@ -100,4 +100,26 @@ public class Seasons {
         Season("乃東生", "Natsukarekusa shōzu", "Self-heal sprouts"), // December 22 - 26
         Season("麋角解", "Sawashika no tsuno otsuru", "Deer shed antlers"), // December 27 - 31
     ]
+    
+    public static func getDate(_ month: Int, _ day: Int) -> Date? {
+        var components = DateComponents()
+        //components.year = 2004 // NB: Any leap year will do
+        components.month = month
+        components.day = day
+        //components.hour = 0
+        //components.minute = 0
+        //components.second = 0
+        
+        let calendar = Calendar.current
+        return calendar.date(from: components)
+    }
+    
+    public static func getSeasonForDate(_ date: Date) -> Season? {
+        let calendar = Calendar.current
+        guard let day = calendar.ordinality(of: .day, in: .year, for: date) else {
+            return nil
+        }
+        
+        return SEASONS[day % SEASONS.count]
+    }
 }
