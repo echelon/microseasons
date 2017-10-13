@@ -97,22 +97,45 @@ import ScreenSaver
 
 	public override func animateOneFrame() {
         clearBackground(color: NSColor.white)
-        /*let p = arc4random_uniform(101)
-        
-        if p < 50 {
-         
-
-        } else {
-            
-            clearBackground(color: NSColor.black)
-
-        }*/
         
         let number = arc4random_uniform(101)
-        
         let _rect2 = CGRect(x: 0, y: 0, width: 100, height: 100)
-        
         drawMyText(myText: String(number), textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 20 , inRect:_rect2)
+        
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM d" // October 12
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+        let nameOfMonth = dateFormatter.string(for: date)!
+        
+        let month = calendar.component(.month, from: date)
+        
+        let _rect1 = CGRect(x: 50, y: 130, width: 200, height: 200)
+        
+        //drawMyText(myText: "Testing 1234", textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 20, inRect: _rect1)
+        drawMyText(myText: nameOfMonth, textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 10 , inRect:_rect1)
+        
+        let season = Seasons.SEASONS[0]
+        
+        
+        let _rect3 = CGRect(x: 150, y: 290, width: 200, height: 200)
+        let _rect4 = CGRect(x: 150, y: 590, width: 200, height: 200)
+        let _rect5 = CGRect(x: 150, y: 890, width: 200, height: 200)
+
+        
+        
+        drawMyText(myText: season.english, textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 10 , inRect:_rect3)
+        
+        drawMyText(myText: season.japanese, textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 10 , inRect:_rect4)
+        
+        drawMyText(myText: season.romaji, textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 10 , inRect:_rect5)
+
+        
         
 		for _ in 0..<speed.ticksPerFrame {
             

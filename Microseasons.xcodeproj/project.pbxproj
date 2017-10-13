@@ -35,6 +35,7 @@
 		218921041F51059C00B03FCE /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218921031F51059C00B03FCE /* PreferencesWindowController.swift */; };
 		218921051F51060600B03FCE /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218921031F51059C00B03FCE /* PreferencesWindowController.swift */; };
 		218921061F51060600B03FCE /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218921011F51034300B03FCE /* Preferences.xib */; };
+		6334454F1F90439C00698237 /* Seasons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334454E1F90439C00698237 /* Seasons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		218921011F51034300B03FCE /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		218921031F51059C00B03FCE /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		218921081F519BD400B03FCE /* Microseasons.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Microseasons.entitlements; sourceTree = "<group>"; };
+		6334454E1F90439C00698237 /* Seasons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seasons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +107,7 @@
 				218920D81F50F1B900B03FCE /* Support */,
 			);
 			name = microseasons;
-			path = "Microseasons";
+			path = Microseasons;
 			sourceTree = "<group>";
 		};
 		211873A31F50D8FE005F7DE7 /* Preview */ = {
@@ -177,6 +179,7 @@
 				218920D61F50F1B900B03FCE /* Theme.swift */,
 				218920D71F50F1B900B03FCE /* Direction.swift */,
 				218920FE1F50F2DB00B03FCE /* Speed.swift */,
+				6334454E1F90439C00698237 /* Seasons.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -209,7 +212,7 @@
 			dependencies = (
 			);
 			name = Microseasons;
-			productName = "Microseasons";
+			productName = Microseasons;
 			productReference = 211873911F50D8F1005F7DE7 /* Microseasons.saver */;
 			productType = "com.apple.product-type.bundle";
 		};
@@ -320,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6334454F1F90439C00698237 /* Seasons.swift in Sources */,
 				218920DD1F50F1B900B03FCE /* Size.swift in Sources */,
 				218921041F51059C00B03FCE /* PreferencesWindowController.swift in Sources */,
 				218920DE1F50F1B900B03FCE /* Point.swift in Sources */,
@@ -464,7 +468,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "Microseasons/Support/Microseasons.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Microseasons/Support/Microseasons.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 728TPZ87N6;
@@ -485,7 +489,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "Microseasons/Support/Microseasons.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Microseasons/Support/Microseasons.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 728TPZ87N6;
