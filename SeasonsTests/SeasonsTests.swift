@@ -32,6 +32,24 @@ class SeasonsTests: XCTestCase {
         
         
         XCTAssert(season.english == "Wheat sprouts under snow")
+        
+        date = Seasons.getDate(12, 31)!
+        season = Seasons.getSeasonForDate(date)!
+        
+        NSLog("Season: " + season.english)
+        
+        XCTAssert(season.english == "Deer shed antlers")
+    }
+    
+    func testGetSeason() {
+        var season = Seasons.getSeason(0)!
+        XCTAssert(season.english == "Wheat sprouts under snow")
+        
+        season = Seasons.getSeason(50)!
+        XCTAssert(season.english == "Wagtails sing")
+
+        season = Seasons.getSeason(71)!
+        XCTAssert(season.english == "Deer shed antlers")
     }
     
 }

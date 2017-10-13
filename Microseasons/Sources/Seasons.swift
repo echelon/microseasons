@@ -77,7 +77,7 @@ public class Seasons {
         Season("天地始粛", "Tenchi hajimete samushi", "Heat starts to die down"), // August 28 - September 1
         Season("禾乃登", "Kokumono sunawachi minoru", "Rice ripens"), // September 2 - 7
         Season("草露白", "Kusa no tsuyu shiroshi", "Dew glistens white on grass"), // September 8 - 12
-        Season("鶺鴒鳴", "Sekirei naku", "Sekirei naku"), // September 13 - 17
+        Season("鶺鴒鳴", "Sekirei naku", "Wagtails sing"), // September 13 - 17
         Season("玄鳥去", "Tsubame saru", "Swallows leave"), // September 18 - 22
         Season("雷乃収声", "Kaminari sunawachi koe o osamu", "Thunder ceases"), // September 23 - 27
         Season("蟄虫坏戸", "Mushi kakurete to o fusagu", "Insects hole up underground"), // September 28 - October 2
@@ -114,12 +114,22 @@ public class Seasons {
         return calendar.date(from: components)
     }
     
+    public static func getSeason(_ index: Int) -> Season? {
+        if (index < 0 || index >= SEASONS.count) {
+            return nil
+        }
+        return SEASONS[index]
+    }
+    
     public static func getSeasonForDate(_ date: Date) -> Season? {
         let calendar = Calendar.current
         guard let day = calendar.ordinality(of: .day, in: .year, for: date) else {
             return nil
         }
         
-        return SEASONS[day % SEASONS.count]
+        let percent = Float(day) / 365.0
+        let index = Int(percent * Float(SEASONS.count))
+        
+        return SEASONS[index % SEASONS.count]
     }
 }
