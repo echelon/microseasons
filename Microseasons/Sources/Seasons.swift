@@ -128,7 +128,13 @@ public class Seasons {
         }
         
         let percent = Float(day) / 365.0
-        let index = Int(percent * Float(SEASONS.count))
+        
+        NSLog("Percent: %f", percent)
+        let index = Int(percent * Float(SEASONS.count - 1))
+        
+        NSLog("Index: %d", index)
+        
+        NSLog("Date: " + date.debugDescription)
         
         return SEASONS[index % SEASONS.count]
     }

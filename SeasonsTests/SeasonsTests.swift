@@ -10,34 +10,18 @@ import XCTest
 
 class SeasonsTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Setup code here.
-    }
-    
-    override func tearDown() {
-        // Teardown code here.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
+    func testGetSeasonForDate() {
         var date = Seasons.getDate(1, 1)!
-        
         var season = Seasons.getSeasonForDate(date)!
-        
-        NSLog("Season: " + season.english)
-        
-        
         XCTAssert(season.english == "Wheat sprouts under snow")
+        
+        // TODO: Dates are slightly off.
+        date = Seasons.getDate(10, 13)!
+        season = Seasons.getSeasonForDate(date)!
+        XCTAssert(season.english == "Wild geese return")
         
         date = Seasons.getDate(12, 31)!
         season = Seasons.getSeasonForDate(date)!
-        
-        NSLog("Season: " + season.english)
-        
         XCTAssert(season.english == "Deer shed antlers")
     }
     
@@ -50,6 +34,7 @@ class SeasonsTests: XCTestCase {
 
         season = Seasons.getSeason(71)!
         XCTAssert(season.english == "Deer shed antlers")
+        
+        XCTAssertNil(Seasons.getSeason(72))
     }
-    
 }
