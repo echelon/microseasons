@@ -58,15 +58,32 @@ import ScreenSaver
 
 	public override func draw(_ rect: NSRect) {
 		guard let context = NSGraphicsContext.current()?.cgContext else { return }
+        context.setFillColor(NSColor.white.cgColor)
+        //context.setFillColor(boardView?.theme.backgroundColor.cgColor ?? NSColor.white.cgColor)
+        context.fill(bounds)
+        
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM d"
+        let nameOfMonth = dateFormatter.string(for: date)!
+        
+        let month = calendar.component(.month, from: date)
+        
+        let _rect1 = CGRect(x: 50, y: 130, width: 200, height: 200)
+        
+        //drawMyText(myText: "Testing 1234", textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 20, inRect: _rect1)
+        drawMyText(myText: nameOfMonth, textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 10 , inRect:_rect1)
+        
 
         
-        context.setFillColor(NSColor.white.cgColor)
-		//context.setFillColor(boardView?.theme.backgroundColor.cgColor ?? NSColor.white.cgColor)
-		context.fill(bounds)
+        let _rect2 = CGRect(x: 40, y: 100, width: 100, height: 100)
         
-        let _rect = CGRect(x: 40, y: 100, width: 100, height: 100)
-        
-        drawMyText(myText: "Wild geese return", textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 20 , inRect:_rect)
+        drawMyText(myText: "Wild geese returnz", textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 20 , inRect:_rect2)
 	}
 
 
