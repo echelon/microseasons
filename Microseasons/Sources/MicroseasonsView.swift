@@ -57,19 +57,17 @@ import ScreenSaver
 	}
 
 	public override func draw(_ rect: NSRect) {
-		guard let context = NSGraphicsContext.current()?.cgContext else { return }
-        context.setFillColor(NSColor.white.cgColor)
-        //context.setFillColor(boardView?.theme.backgroundColor.cgColor ?? NSColor.white.cgColor)
-        context.fill(bounds)
+
+        clearBackground(color: NSColor.black)
         
-        
-        let date = Date()
+        /*let date = Date()
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
         let minutes = calendar.component(.minute, from: date)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM d"
+        dateFormatter.dateFormat = "MMMM d" // October 12
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
         let nameOfMonth = dateFormatter.string(for: date)!
         
         let month = calendar.component(.month, from: date)
@@ -77,14 +75,14 @@ import ScreenSaver
         let _rect1 = CGRect(x: 50, y: 130, width: 200, height: 200)
         
         //drawMyText(myText: "Testing 1234", textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 20, inRect: _rect1)
-        drawMyText(myText: nameOfMonth, textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 10 , inRect:_rect1)
+        drawMyText(myText: nameOfMonth, textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 10 , inRect:_rect1)*/
         
 
-        
-        let _rect2 = CGRect(x: 40, y: 100, width: 100, height: 100)
-        
-        drawMyText(myText: "Wild geese returnz", textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 20 , inRect:_rect2)
 	}
+    
+    //public override func needsToDraw(_ rect: NSRect) -> Bool {
+    //    return true
+    //}
 
 
 	// MARK: - ScreenSaverView
@@ -98,9 +96,62 @@ import ScreenSaver
 	}
 
 	public override func animateOneFrame() {
+    
+        let p = arc4random_uniform(101)
+        
+        if p < 50 {
+            
+            clearBackground(color: NSColor.white)
+
+        } else {
+            
+            clearBackground(color: NSColor.black)
+
+        }
+        
+        let number = arc4random_uniform(101)
+        
+        let _rect2 = CGRect(x: 0, y: 0, width: 100, height: 100)
+        
+        drawMyText(myText: String(number), textColor: NSColor.white, FontName: "Helvetica Bold", FontSize: 20 , inRect:_rect2)
+        
 		for _ in 0..<speed.ticksPerFrame {
-			boardView?.board.tick()
+            
+            /*guard let context = NSGraphicsContext.current()?.cgContext else { return }
+            context.setFillColor(NSColor.white.cgColor)
+            //context.setFillColor(boardView?.theme.backgroundColor.cgColor ?? NSColor.white.cgColor)
+            context.fill(bounds)
+            
+            let date = Date()
+            let calendar = Calendar.current
+            let hour = calendar.component(.hour, from: date)
+            let minutes = calendar.component(.minute, from: date)
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMMM d" // October 12
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+            let nameOfMonth = dateFormatter.string(for: date)!
+            
+            let month = calendar.component(.month, from: date)
+            
+            let _rect1 = CGRect(x: 50, y: 130, width: 200, height: 200)
+            
+            //drawMyText(myText: "Testing 1234", textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 20, inRect: _rect1)
+            drawMyText(myText: nameOfMonth, textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 10 , inRect:_rect1)
+            
+            
+            let number = arc4random_uniform(101)
+            
+            let _rect2 = CGRect(x: 40, y: 100, width: 100, height: 100)
+            
+            drawMyText(myText: String(number), textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 20 , inRect:_rect2)
+            
+            
+			boardView?.board.tick()*/
+            
 		}
+        
+
 	}
 
 	public override func configureSheet() -> NSWindow? {
@@ -114,6 +165,12 @@ import ScreenSaver
 	public override func hasConfigureSheet() -> Bool {
 		return true
 	}
+    
+    private func clearBackground(color: NSColor) {
+        guard let context = NSGraphicsContext.current()?.cgContext else { return }
+        context.setFillColor(color.cgColor)
+        context.fill(bounds)
+    }
     
     func drawMyText(myText:String,textColor:NSColor, FontName:String, FontSize:CGFloat, inRect:CGRect){
         
@@ -198,10 +255,14 @@ import ScreenSaver
 	}
 
 	private func initialize() {
-		speedDidChange()
+		/*speedDidChange()
 
 		NotificationCenter.default.addObserver(self, selector: #selector(resetBoard), name: Preferences.boardDidChange, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(speedDidChange), name: Preferences.speedDidChange, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(themeDidChange), name: Preferences.themeDidChange, object: nil)
+        
+        startAnimation()*/
+        
+        
 	}
 }
