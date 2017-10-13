@@ -96,24 +96,23 @@ import ScreenSaver
 	}
 
 	public override func animateOneFrame() {
-    
-        let p = arc4random_uniform(101)
+        clearBackground(color: NSColor.white)
+        /*let p = arc4random_uniform(101)
         
         if p < 50 {
-            
-            clearBackground(color: NSColor.white)
+         
 
         } else {
             
             clearBackground(color: NSColor.black)
 
-        }
+        }*/
         
         let number = arc4random_uniform(101)
         
         let _rect2 = CGRect(x: 0, y: 0, width: 100, height: 100)
         
-        drawMyText(myText: String(number), textColor: NSColor.white, FontName: "Helvetica Bold", FontSize: 20 , inRect:_rect2)
+        drawMyText(myText: String(number), textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 20 , inRect:_rect2)
         
 		for _ in 0..<speed.ticksPerFrame {
             
