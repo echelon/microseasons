@@ -5,6 +5,7 @@
 //  Created by bt on 10/12/17.
 //  Copyright © 2017 Brandon Thomas. All rights reserved.
 //
+//  The 72 ancient Japanese microseasons.
 //  From http://www.nippon.com/en/features/h00124/
 //
 

@@ -120,6 +120,7 @@ import ScreenSaver
         //drawMyText(myText: "Testing 1234", textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 20, inRect: _rect1)
         drawMyText(myText: nameOfMonth, textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 10 , inRect:_rect1)
         
+        
         let season = Seasons.SEASONS[0]
         
         

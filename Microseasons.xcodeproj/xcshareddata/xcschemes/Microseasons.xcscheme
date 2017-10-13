@@ -28,7 +28,31 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "633445531F90510400698237"
+               BuildableName = "SeasonsTests.xctest"
+               BlueprintName = "SeasonsTests"
+               ReferencedContainer = "container:Microseasons.xcodeproj">
+            </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "SeasonTests">
+               </Test>
+            </SkippedTests>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "211873901F50D8F1005F7DE7"
+            BuildableName = "Microseasons.saver"
+            BlueprintName = "Microseasons"
+            ReferencedContainer = "container:Microseasons.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

@@ -36,7 +36,20 @@
 		218921051F51060600B03FCE /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218921031F51059C00B03FCE /* PreferencesWindowController.swift */; };
 		218921061F51060600B03FCE /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218921011F51034300B03FCE /* Preferences.xib */; };
 		6334454F1F90439C00698237 /* Seasons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334454E1F90439C00698237 /* Seasons.swift */; };
+		6334455F1F90519400698237 /* SeasonsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334455E1F90519400698237 /* SeasonsTests.swift */; };
+		633445621F9053F000698237 /* Seasons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334454E1F90439C00698237 /* Seasons.swift */; };
+		633445631F9053F100698237 /* Seasons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334454E1F90439C00698237 /* Seasons.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		633445591F90510400698237 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 211873881F50D8F1005F7DE7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 211873A11F50D8FE005F7DE7;
+			remoteInfo = Preview;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		211873911F50D8F1005F7DE7 /* Microseasons.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Microseasons.saver; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +75,9 @@
 		218921031F51059C00B03FCE /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		218921081F519BD400B03FCE /* Microseasons.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Microseasons.entitlements; sourceTree = "<group>"; };
 		6334454E1F90439C00698237 /* Seasons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seasons.swift; sourceTree = "<group>"; };
+		633445541F90510400698237 /* SeasonsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeasonsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		633445581F90510400698237 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6334455E1F90519400698237 /* SeasonsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +95,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		633445511F90510400698237 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -87,6 +110,7 @@
 			children = (
 				211873931F50D8F1005F7DE7 /* microseasons */,
 				211873A31F50D8FE005F7DE7 /* Preview */,
+				633445551F90510400698237 /* SeasonsTests */,
 				211873921F50D8F1005F7DE7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +120,7 @@
 			children = (
 				211873911F50D8F1005F7DE7 /* Microseasons.saver */,
 				211873A21F50D8FE005F7DE7 /* Preview.app */,
+				633445541F90510400698237 /* SeasonsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,6 +209,15 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		633445551F90510400698237 /* SeasonsTests */ = {
+			isa = PBXGroup;
+			children = (
+				6334455E1F90519400698237 /* SeasonsTests.swift */,
+				633445581F90510400698237 /* Info.plist */,
+			);
+			path = SeasonsTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -233,6 +267,24 @@
 			productReference = 211873A21F50D8FE005F7DE7 /* Preview.app */;
 			productType = "com.apple.product-type.application";
 		};
+		633445531F90510400698237 /* SeasonsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6334455B1F90510400698237 /* Build configuration list for PBXNativeTarget "SeasonsTests" */;
+			buildPhases = (
+				633445501F90510400698237 /* Sources */,
+				633445511F90510400698237 /* Frameworks */,
+				633445521F90510400698237 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6334455A1F90510400698237 /* PBXTargetDependency */,
+			);
+			name = SeasonsTests;
+			productName = SeasonsTests;
+			productReference = 633445541F90510400698237 /* SeasonsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -259,6 +311,12 @@
 							};
 						};
 					};
+					633445531F90510400698237 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 728TPZ87N6;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 211873A11F50D8FE005F7DE7;
+					};
 				};
 			};
 			buildConfigurationList = 2118738B1F50D8F1005F7DE7 /* Build configuration list for PBXProject "Microseasons" */;
@@ -276,6 +334,7 @@
 			targets = (
 				211873901F50D8F1005F7DE7 /* Microseasons */,
 				211873A11F50D8FE005F7DE7 /* Preview */,
+				633445531F90510400698237 /* SeasonsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -296,6 +355,13 @@
 				218920EE1F50F1BD00B03FCE /* Main.storyboard in Resources */,
 				218921061F51060600B03FCE /* Preferences.xib in Resources */,
 				218920EF1F50F1BD00B03FCE /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		633445521F90510400698237 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +414,7 @@
 				218921001F50F38200B03FCE /* Speed.swift in Sources */,
 				218920F81F50F1D400B03FCE /* Direction.swift in Sources */,
 				218920F31F50F1D400B03FCE /* BoardView.swift in Sources */,
+				633445621F9053F000698237 /* Seasons.swift in Sources */,
 				218920F21F50F1D400B03FCE /* Board.swift in Sources */,
 				218920F51F50F1D400B03FCE /* Point.swift in Sources */,
 				218920FD1F50F26D00B03FCE /* Preferences.swift in Sources */,
@@ -358,7 +425,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		633445501F90510400698237 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				633445631F9053F100698237 /* Seasons.swift in Sources */,
+				6334455F1F90519400698237 /* SeasonsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6334455A1F90510400698237 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 211873A11F50D8FE005F7DE7 /* Preview */;
+			targetProxy = 633445591F90510400698237 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		218920E81F50F1BD00B03FCE /* Main.storyboard */ = {
@@ -538,6 +622,39 @@
 			};
 			name = Release;
 		};
+		6334455C1F90510400698237 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 728TPZ87N6;
+				INFOPLIST_FILE = SeasonsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = bt.SeasonsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Preview.app/Contents/MacOS/Preview";
+			};
+			name = Debug;
+		};
+		6334455D1F90510400698237 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 728TPZ87N6;
+				INFOPLIST_FILE = SeasonsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = bt.SeasonsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Preview.app/Contents/MacOS/Preview";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -564,6 +681,15 @@
 			buildConfigurations = (
 				211873AF1F50D8FE005F7DE7 /* Debug */,
 				211873B01F50D8FE005F7DE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6334455B1F90510400698237 /* Build configuration list for PBXNativeTarget "SeasonsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6334455C1F90510400698237 /* Debug */,
+				6334455D1F90510400698237 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

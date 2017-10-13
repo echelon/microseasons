@@ -12,7 +12,7 @@ final class PreviewWindowController: NSWindowController {
 
 	// MARK: - Properties
 
-	private let screenSaverView = LangtonsAntView()
+	private let screenSaverView = MicroseasonsView()
 
 
 	// MARK: - NSWindowController
@@ -22,7 +22,7 @@ final class PreviewWindowController: NSWindowController {
 
 		window?.contentView = screenSaverView
 
-		Timer.scheduledTimer(timeInterval: screenSaverView.animationTimeInterval, target: screenSaverView, selector: #selector(LangtonsAntView.animateOneFrame), userInfo: nil, repeats: true)
+		Timer.scheduledTimer(timeInterval: screenSaverView.animationTimeInterval, target: screenSaverView, selector: #selector(MicroseasonsView.animateOneFrame), userInfo: nil, repeats: true)
 	}
 
 
