@@ -51,11 +51,11 @@ import ScreenSaver
         
         let center = getCenter()
         
-        let bbox1 = centeredRectangle(width: 500, height: 200, x: Int(center.x), y: Int(center.y + 100))
-        let bbox2 = centeredRectangle(width: 500, height: 200, x: Int(center.x), y: Int(center.y - 120))
-        let bbox3 = centeredRectangle(width: 500, height: 200, x: Int(center.x), y: Int(center.y - 200))
+        let bbox1 = centeredRectangle(width: 800, height: 200, x: Int(center.x), y: Int(center.y + 100))
+        let bbox2 = centeredRectangle(width: 800, height: 200, x: Int(center.x), y: Int(center.y - 120))
+        let bbox3 = centeredRectangle(width: 800, height: 200, x: Int(center.x), y: Int(center.y - 200))
         
-        let season = Seasons.getSeason(0)!
+        let season = Seasons.getCurrentSeason()
         
         /*
          Fonts that work 

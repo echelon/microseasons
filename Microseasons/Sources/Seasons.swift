@@ -128,4 +128,13 @@ public class Seasons {
         
         return SEASONS[index % SEASONS.count]
     }
+    
+    public static func getCurrentSeason() -> Season {
+        let date = Date()
+        if let season = getSeasonForDate(date) {
+            return season
+        } else {
+            return SEASONS[0]
+        }
+    }
 }
