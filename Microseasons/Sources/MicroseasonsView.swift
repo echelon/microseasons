@@ -11,6 +11,28 @@ import ScreenSaver
 
 @objc public final class MicroseasonsView: ScreenSaverView {
 
+    struct Dimensions {
+        let width: Int
+        let height: Int
+        
+        init(width: Int, height: Int) {
+            self.width = width
+            self.height = height
+        }
+        
+        public static func getDisplayResolution() -> Dimensions? {
+            guard let screen = NSScreen.main() else {
+                return nil
+            }
+            
+            let rect: NSRect = screen.frame
+            let height = Int(rect.size.height)
+            let width = Int(rect.size.width)
+            
+            return Dimensions(width: width, height: height)
+        }
+    }
+    
 	// MARK: - Properties
 
 	private var speed: Speed = .normal
@@ -56,29 +78,13 @@ import ScreenSaver
 		super.resizeSubviews(withOldSize: oldSize)
 		setupBoard()
 	}
+    
+    func getCenter() -> CGPoint {
+        return CGPoint(x: self.frame.size.width / 2.0, y: self.frame.size.height / 2.0)
+    }
 
 	public override func draw(_ rect: NSRect) {
-
         clearBackground(color: NSColor.black)
-        
-        /*let date = Date()
-        let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: date)
-        let minutes = calendar.component(.minute, from: date)
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM d" // October 12
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-        let nameOfMonth = dateFormatter.string(for: date)!
-        
-        let month = calendar.component(.month, from: date)
-        
-        let _rect1 = CGRect(x: 50, y: 130, width: 200, height: 200)
-        
-        //drawMyText(myText: "Testing 1234", textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 20, inRect: _rect1)
-        drawMyText(myText: nameOfMonth, textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 10 , inRect:_rect1)*/
-        
-
 	}
     
     //public override func needsToDraw(_ rect: NSRect) -> Bool {
@@ -99,84 +105,26 @@ import ScreenSaver
 	public override func animateOneFrame() {
         clearBackground(color: NSColor.white)
         
-        let number = arc4random_uniform(101)
-        let _rect2 = CGRect(x: 0, y: 0, width: 100, height: 100)
-        drawMyText(myText: String(number), textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 20 , inRect:_rect2)
+        let center = getCenter()
         
+        let bbox1 = centeredRectangle(width: 500, height: 200, x: Int(center.x), y: Int(center.y + 200))
+        let bbox2 = centeredRectangle(width: 500, height: 200, x: Int(center.x), y: Int(center.y))
+        let bbox3 = centeredRectangle(width: 500, height: 200, x: Int(center.x), y: Int(center.y - 200))
         
-        let date = Date()
-        let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: date)
-        let minutes = calendar.component(.minute, from: date)
+        let season = Seasons.getSeason(0)!
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM d" // October 12
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-        let nameOfMonth = dateFormatter.string(for: date)!
+        /*
+         Fonts that work 
+            - Heiti SC Light
+            - Hiragino Sans W2
+            - Klee Medium (must be installed via system font dialog)
+            - Hannotate SC Regular (must be installed)
+        */
         
-        let month = calendar.component(.month, from: date)
-        
-        let _rect1 = CGRect(x: 50, y: 130, width: 200, height: 200)
-        
-        //drawMyText(myText: "Testing 1234", textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 20, inRect: _rect1)
-        drawMyText(myText: nameOfMonth, textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 10 , inRect:_rect1)
-        
-        
-        let season = Seasons.SEASONS[0]
-        
-        
-        let _rect3 = CGRect(x: 150, y: 290, width: 200, height: 200)
-        let _rect4 = CGRect(x: 150, y: 590, width: 200, height: 200)
-        let _rect5 = CGRect(x: 150, y: 890, width: 200, height: 200)
-
-        
-        
-        drawMyText(myText: season.english, textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 10 , inRect:_rect3)
-        
-        drawMyText(myText: season.japanese, textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 10 , inRect:_rect4)
-        
-        drawMyText(myText: season.romaji, textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 10 , inRect:_rect5)
-
-        
-        
-		for _ in 0..<speed.ticksPerFrame {
-            
-            /*guard let context = NSGraphicsContext.current()?.cgContext else { return }
-            context.setFillColor(NSColor.white.cgColor)
-            //context.setFillColor(boardView?.theme.backgroundColor.cgColor ?? NSColor.white.cgColor)
-            context.fill(bounds)
-            
-            let date = Date()
-            let calendar = Calendar.current
-            let hour = calendar.component(.hour, from: date)
-            let minutes = calendar.component(.minute, from: date)
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMMM d" // October 12
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-            let nameOfMonth = dateFormatter.string(for: date)!
-            
-            let month = calendar.component(.month, from: date)
-            
-            let _rect1 = CGRect(x: 50, y: 130, width: 200, height: 200)
-            
-            //drawMyText(myText: "Testing 1234", textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 20, inRect: _rect1)
-            drawMyText(myText: nameOfMonth, textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 10 , inRect:_rect1)
-            
-            
-            let number = arc4random_uniform(101)
-            
-            let _rect2 = CGRect(x: 40, y: 100, width: 100, height: 100)
-            
-            drawMyText(myText: String(number), textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 20 , inRect:_rect2)
-            
-            
-			boardView?.board.tick()*/
-            
-		}
-        
-
-	}
+        drawMyText(myText: season.japanese, textColor: NSColor.black, FontName: "Hannotate SC Regular", FontSize: 100, inRect: bbox1)
+        drawMyText(myText: season.romaji, textColor: NSColor.black, FontName: "Helvetica Bold", FontSize: 20, inRect: bbox2)
+        drawMyText(myText: season.english, textColor: NSColor.black, FontName: "Helvetica Light", FontSize: 20, inRect: bbox3)
+    }
 
 	public override func configureSheet() -> NSWindow? {
 		let windowController = PreferencesWindowController()
@@ -199,9 +147,14 @@ import ScreenSaver
     func drawMyText(myText:String,textColor:NSColor, FontName:String, FontSize:CGFloat, inRect:CGRect){
         
         let textFont = NSFont(name: FontName, size: FontSize)!
+        
+        let style = NSMutableParagraphStyle()
+        style.alignment = .center
+        
         let textFontAttributes = [
             NSFontAttributeName: textFont,
             NSForegroundColorAttributeName: textColor,
+            NSParagraphStyleAttributeName: style,
             ] as [String : Any]
         
         myText.draw(in: inRect, withAttributes: textFontAttributes)
@@ -209,6 +162,19 @@ import ScreenSaver
 	
 
 	// MARK: - Private
+    
+    
+    // Create a rectangle of dimensions (width,height) centered at (x, y).
+    public func centeredRectangle(width: Int, height: Int, x: Int, y: Int) -> CGRect {
+        let xOff = Int(Float(width) / 2.0)
+        let yOff = Int(Float(height) / 2.0)
+        
+        let drawX = x - xOff
+        let drawY = y - yOff
+        
+        return CGRect(x: drawX, y: drawY, width: width, height: height)
+        
+    }
 
 	private func setupBoard() {
 		if previousSize == bounds.size {
