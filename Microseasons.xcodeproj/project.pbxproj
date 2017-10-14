@@ -10,11 +10,7 @@
 		218920DA1F50F1B900B03FCE /* MicroseasonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218920D01F50F1B900B03FCE /* MicroseasonsView.swift */; };
 		218920EC1F50F1BD00B03FCE /* PreviewWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218920E41F50F1BD00B03FCE /* PreviewWindowController.swift */; };
 		218920ED1F50F1BD00B03FCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218920E51F50F1BD00B03FCE /* AppDelegate.swift */; };
-		218920EE1F50F1BD00B03FCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218920E81F50F1BD00B03FCE /* Main.storyboard */; };
-		218920EF1F50F1BD00B03FCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 218920EA1F50F1BD00B03FCE /* Images.xcassets */; };
 		218920F11F50F1D400B03FCE /* MicroseasonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218920D01F50F1B900B03FCE /* MicroseasonsView.swift */; };
-		218921021F51034300B03FCE /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218921011F51034300B03FCE /* Preferences.xib */; };
-		218921061F51060600B03FCE /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218921011F51034300B03FCE /* Preferences.xib */; };
 		6334454F1F90439C00698237 /* Seasons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334454E1F90439C00698237 /* Seasons.swift */; };
 		6334455F1F90519400698237 /* SeasonsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334455E1F90519400698237 /* SeasonsTests.swift */; };
 		633445621F9053F000698237 /* Seasons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334454E1F90439C00698237 /* Seasons.swift */; };
@@ -39,10 +35,7 @@
 		218920E41F50F1BD00B03FCE /* PreviewWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewWindowController.swift; sourceTree = "<group>"; };
 		218920E51F50F1BD00B03FCE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		218920E71F50F1BD00B03FCE /* Preview.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Preview.entitlements; sourceTree = "<group>"; };
-		218920E91F50F1BD00B03FCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		218920EA1F50F1BD00B03FCE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		218920EB1F50F1BD00B03FCE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		218921011F51034300B03FCE /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		218921081F519BD400B03FCE /* Microseasons.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Microseasons.entitlements; sourceTree = "<group>"; };
 		6334454E1F90439C00698237 /* Seasons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seasons.swift; sourceTree = "<group>"; };
 		633445541F90510400698237 /* SeasonsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeasonsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				218920D91F50F1B900B03FCE /* Info.plist */,
-				218921011F51034300B03FCE /* Preferences.xib */,
 				218921081F519BD400B03FCE /* Microseasons.entitlements */,
 			);
 			path = Support;
@@ -145,8 +137,6 @@
 		218920E61F50F1BD00B03FCE /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				218920E81F50F1BD00B03FCE /* Main.storyboard */,
-				218920EA1F50F1BD00B03FCE /* Images.xcassets */,
 				218920E71F50F1BD00B03FCE /* Preview.entitlements */,
 				218920EB1F50F1BD00B03FCE /* Info.plist */,
 			);
@@ -304,7 +294,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				218921021F51034300B03FCE /* Preferences.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,9 +301,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				218920EE1F50F1BD00B03FCE /* Main.storyboard in Resources */,
-				218921061F51060600B03FCE /* Preferences.xib in Resources */,
-				218920EF1F50F1BD00B03FCE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,17 +369,6 @@
 			targetProxy = 633445591F90510400698237 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		218920E81F50F1BD00B03FCE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				218920E91F50F1BD00B03FCE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		211873991F50D8F1005F7DE7 /* Debug */ = {
