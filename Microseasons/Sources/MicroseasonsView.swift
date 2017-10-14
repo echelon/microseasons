@@ -1,33 +1,18 @@
 //
 //  MicroseasonsView.swift
 //  Japanese Microseasons
-//  Based on the Swift code in https://github.com/soffes/langtons-ant
 //
-//  Created by Sam Soffes on 8/25/17.
-//  Copyright © 2017 Sam Soffes. All rights reserved.
+//  Created by bt on 10/12/17.
+//  Copyright © 2017 Brandon Thomas. All rights reserved.
+//
+//  Based on the Swift code in https://github.com/soffes/langtons-ant
 //
 
 import ScreenSaver
 
 @objc public final class MicroseasonsView: ScreenSaverView {
 
-	private var speed: Speed = .normal
-
-	private var boardView: BoardView? {
-		willSet {
-			boardView?.removeFromSuperview()
-		}
-	}
-
 	private var previousSize: CGSize = .zero
-
-	private let preferences = Preferences()
-
-	private var preferencesWindowController: PreferencesWindowController? {
-		willSet {
-			preferencesWindowController?.close()
-		}
-	}
 
 	public override init?(frame: NSRect, isPreview: Bool) {
 		super.init(frame: frame, isPreview: isPreview)
@@ -66,8 +51,8 @@ import ScreenSaver
         
         let center = getCenter()
         
-        let bbox1 = centeredRectangle(width: 500, height: 200, x: Int(center.x), y: Int(center.y + 200))
-        let bbox2 = centeredRectangle(width: 500, height: 200, x: Int(center.x), y: Int(center.y))
+        let bbox1 = centeredRectangle(width: 500, height: 200, x: Int(center.x), y: Int(center.y + 100))
+        let bbox2 = centeredRectangle(width: 500, height: 200, x: Int(center.x), y: Int(center.y - 120))
         let bbox3 = centeredRectangle(width: 500, height: 200, x: Int(center.x), y: Int(center.y - 200))
         
         let season = Seasons.getSeason(0)!
@@ -88,15 +73,12 @@ import ScreenSaver
     }
 
 	public override func configureSheet() -> NSWindow? {
-		let windowController = PreferencesWindowController()
-		windowController.loadWindow()
-		let window = windowController.window
-		preferencesWindowController = windowController
-		return window
+        // TODO: If you want to provide configurations, build and expose the dialog window here.
+		return nil
 	}
 	
 	public override func hasConfigureSheet() -> Bool {
-		return true
+		return false
 	}
     
     private func clearBackground(color: NSColor) {
@@ -130,6 +112,5 @@ import ScreenSaver
         let drawY = y - yOff
         
         return CGRect(x: drawX, y: drawY, width: width, height: height)
-        
     }
 }

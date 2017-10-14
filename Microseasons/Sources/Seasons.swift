@@ -1,6 +1,6 @@
 //
 //  Seasons.swift
-//  Microseasons
+//  Japanese Microseasons
 //
 //  Created by bt on 10/12/17.
 //  Copyright © 2017 Brandon Thomas. All rights reserved.
@@ -103,13 +103,8 @@ public class Seasons {
     
     public static func getDate(_ month: Int, _ day: Int) -> Date? {
         var components = DateComponents()
-        //components.year = 2004 // NB: Any leap year will do
         components.month = month
         components.day = day
-        //components.hour = 0
-        //components.minute = 0
-        //components.second = 0
-        
         let calendar = Calendar.current
         return calendar.date(from: components)
     }
@@ -121,6 +116,7 @@ public class Seasons {
         return SEASONS[index]
     }
     
+    // TODO: This is very wrong and broken, but I'll fix it later.
     public static func getSeasonForDate(_ date: Date) -> Season? {
         let calendar = Calendar.current
         guard let day = calendar.ordinality(of: .day, in: .year, for: date) else {
@@ -128,13 +124,7 @@ public class Seasons {
         }
         
         let percent = Float(day) / 365.0
-        
-        NSLog("Percent: %f", percent)
         let index = Int(percent * Float(SEASONS.count - 1))
-        
-        NSLog("Index: %d", index)
-        
-        NSLog("Date: " + date.debugDescription)
         
         return SEASONS[index % SEASONS.count]
     }
