@@ -23,7 +23,7 @@ final class PreviewWindowController: NSWindowController {
 	}
 
 	@IBAction func showPreferences(_ sender: NSObject?) {
-		guard let sheet = screenSaverView.configureSheet(), let window = window else { return }
+		guard let sheet = screenSaverView.configureSheet, let window = window else { return }
 		
 		window.beginSheet(sheet) { _ in
 			sheet.close()

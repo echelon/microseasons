@@ -3,6 +3,16 @@ Japanese Microseasons Screensaver
 A Mac screensaver written in Swift. Displays the current
 [Japanese microseason](http://www.nippon.com/en/features/h00124/).
 
+Currently buggy
+---------------
+Something broke once I installed 10.13.2. Not sure what.
+
+Possible reasons:
+
+- https://iscreensaver.com/help/notes/high_sierra/high_sierra.shtml
+- https://github.com/JohnCoates/Aerial/issues/385
+- https://alistairmcmillan.github.io/2016/04/25/OSX-Swift-screensaver-bug.html
+
 Installation
 ------------
 - Clone the repo and open in Xcode. (This was built on Xcode 8.3.3 on

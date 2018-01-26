@@ -72,17 +72,17 @@ import ScreenSaver
         drawText(text: english, color: NSColor.gray, fontName: "Hannotate SC Regular", fontSize: 30, rect: bbox3)
     }
 
-	public override func configureSheet() -> NSWindow? {
+	public override var configureSheet: NSWindow? {
         // TODO: If you want to provide configurations, build and expose the dialog window here.
 		return nil
 	}
 	
-	public override func hasConfigureSheet() -> Bool {
+	public override var hasConfigureSheet: Bool {
 		return false
 	}
     
     private func clearBackground(color: NSColor) {
-        guard let context = NSGraphicsContext.current()?.cgContext else { return }
+        guard let context = NSGraphicsContext.current?.cgContext else { return }
         context.setFillColor(color.cgColor)
         context.fill(bounds)
     }
@@ -95,12 +95,16 @@ import ScreenSaver
         style.alignment = .center
         
         let textFontAttributes = [
-            NSFontAttributeName: font,
-            NSForegroundColorAttributeName: color,
-            NSParagraphStyleAttributeName: style,
-            ] as [String : Any]
+            NSAttributedStringKey.font.rawValue: font,
+            NSAttributedStringKey.foregroundColor: color,
+            NSAttributedStringKey.paragraphStyle: style,
+            ] as! [String : Any]
         
-        text.draw(in: rect, withAttributes: textFontAttributes)
+        let convertedAttributes = Dictionary(uniqueKeysWithValues:
+            textFontAttributes.lazy.map { (NSAttributedStringKey($0.key), $0.value) }
+        )
+
+        text.draw(in: rect, withAttributes: convertedAttributes)
     }
 	
     // Create a rectangle of dimensions (width,height) centered at (x, y).
