@@ -10,7 +10,7 @@
 
 import ScreenSaver
 
-@objc public final class MicroseasonsView: ScreenSaverView {
+public final class MicroseasonsView: ScreenSaverView {
 
 	private var previousSize: CGSize = .zero
 
@@ -67,9 +67,12 @@ import ScreenSaver
         
         let english = "(" + season.english + ")"
         
-        drawText(text: season.japanese, color: NSColor.black, fontName: "Hannotate SC Regular", fontSize: 120, rect: bbox1)
-        drawText(text: season.romaji, color: NSColor.gray, fontName: "Hannotate SC Regular", fontSize: 30, rect: bbox2)
-        drawText(text: english, color: NSColor.gray, fontName: "Hannotate SC Regular", fontSize: 30, rect: bbox3)
+        // Note: This font might get uninstalled via OS upgrades or patches. Check the Font Book and click "Download"!
+        let typeface = "Hannotate SC Regular"
+        
+        drawText(text: season.japanese, color: NSColor.black, fontName: typeface, fontSize: 120.0, rect: bbox1)
+        drawText(text: season.romaji, color: NSColor.gray, fontName: typeface, fontSize: 30.0, rect: bbox2)
+        drawText(text: english, color: NSColor.gray, fontName: typeface, fontSize: 30.0, rect: bbox3)
     }
 
 	public override var configureSheet: NSWindow? {
@@ -89,22 +92,18 @@ import ScreenSaver
     
     // Draw text in a box.
     func drawText(text:String, color:NSColor, fontName:String, fontSize:CGFloat, rect:CGRect) {
-        let font = NSFont(name: fontName, size: fontSize)!
-        
-        let style = NSMutableParagraphStyle()
-        style.alignment = .center
-        
-        let textFontAttributes = [
-            NSAttributedStringKey.font.rawValue: font,
-            NSAttributedStringKey.foregroundColor: color,
-            NSAttributedStringKey.paragraphStyle: style,
-            ] as! [String : Any]
-        
-        let convertedAttributes = Dictionary(uniqueKeysWithValues:
-            textFontAttributes.lazy.map { (NSAttributedStringKey($0.key), $0.value) }
-        )
-
-        text.draw(in: rect, withAttributes: convertedAttributes)
+        if let font = NSFont(name: fontName, size: fontSize) {
+            let style = NSMutableParagraphStyle()
+            style.alignment = .center
+            
+            let attributes: [NSAttributedStringKey : Any] = [
+                .font: font,
+                .foregroundColor: color,
+                .paragraphStyle: style,
+                ]
+            
+            text.draw(in: rect, withAttributes: attributes)
+        }
     }
 	
     // Create a rectangle of dimensions (width,height) centered at (x, y).
