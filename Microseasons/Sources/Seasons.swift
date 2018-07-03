@@ -34,7 +34,7 @@ public class Seasons {
     public static let SEASONS = [
         Season("雪下出麦", "Yuki watarite mugi nobiru", "Wheat sprouts under snow", 1, 1), // January 1 - 4
         Season("芹乃栄", "Seri sunawachi sakau", "Parsley flourishes", 1, 5), // January 5 - 9
-        Season("水泉動", "Springs thaw", "Shimizu atataka o fukumu", 1, 10), // January 10 - 14
+        Season("水泉動", "Shimizu atataka o fukumu", "Springs thaw", 1, 10), // January 10 - 14
         Season("雉始雊", "Kiji hajimete naku", "Pheasants start to call", 1, 15), // January 15 - 19
         Season("款冬華", "Fuki no hana saku", "Butterburs bud", 1, 20), // January 20 - 24
         Season("水沢腹堅", "Kiwamizu kōri tsumeru", "Ice thickens on streams", 1, 25), // January 25 - 29
