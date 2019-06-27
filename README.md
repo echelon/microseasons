@@ -5,8 +5,8 @@ A Mac screensaver written in Swift. Displays the current
 
 Installation
 ------------
-- Clone the repo and open in Xcode. (This was built on Xcode 8.3.3 on
-  macOS 10.12.6).
+- Clone the repo and open in Xcode. (This was built on Xcode 10.2.1 on
+  macOS 10.14.5).
 - Click build. You may need to change the signing settings.
 - The `Microseasons.saver` file will be dumped in
   `/Users/{you}/Library/Developer/Xcode/DerivedData/Microseasons-{hash}/Build/Products/Debug`.
@@ -22,6 +22,14 @@ If it crashes, you don't have the required fonts installed.
   in the list), install it.
 - If the font isn't in the list, find a new font or change the font in
   the source.
+
+Further debugging
+-----------------
+- Check the log file when openning the screen saver:
+  `tail -f /var/log/system.log`
+- Add debugging logs with `NSLog("message")`, configure as screensaver from settings,
+  then launch from the command line:
+  `/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine`
 
 License
 -------

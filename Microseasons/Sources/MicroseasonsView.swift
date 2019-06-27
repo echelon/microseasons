@@ -7,6 +7,9 @@
 //
 //  Based on the Swift code in https://github.com/soffes/langtons-ant
 //
+//  See the Apple documentation for ScreenSaverView:
+//  https://developer.apple.com/documentation/screensaver/screensaverview
+//
 
 import ScreenSaver
 
@@ -16,6 +19,7 @@ public final class MicroseasonsView: ScreenSaverView {
 
 	public override init?(frame: NSRect, isPreview: Bool) {
 		super.init(frame: frame, isPreview: isPreview)
+        NSLog("MicroseasonsView CTOR") // NB: Add logging and run from the console to debug MacOS's *frequent* regressions.
 	}
 	
 	public required init?(coder: NSCoder) {
@@ -33,10 +37,6 @@ public final class MicroseasonsView: ScreenSaverView {
     func getCenter() -> CGPoint {
         return CGPoint(x: self.frame.size.width / 2.0, y: self.frame.size.height / 2.0)
     }
-
-	public override func draw(_ rect: NSRect) {
-        clearBackground(color: NSColor.black)
-	}
 	
 	public override var animationTimeInterval: TimeInterval {
 		get {
@@ -46,7 +46,7 @@ public final class MicroseasonsView: ScreenSaverView {
 		set {}
 	}
 
-	public override func animateOneFrame() {
+    public override func draw(_ rect: NSRect) {
         clearBackground(color: NSColor.white)
         
         let center = getCenter()
@@ -75,6 +75,13 @@ public final class MicroseasonsView: ScreenSaverView {
         drawText(text: english, color: NSColor.gray, fontName: typeface, fontSize: 30.0, rect: bbox3)
     }
 
+    public override func animateOneFrame() {
+        // NB/FIXME: OSX used to support all drawing within this function (ie. no need for a draw() function),
+        // but that appears to have been broken in OSX 10.14.5 Mojave. See this bug report where the
+        // NSGraphicsContext is nil: https://github.com/lionheart/openradar-mirror/issues/20659
+        needsDisplay = true
+    }
+
 	public override var configureSheet: NSWindow? {
         // TODO: If you want to provide configurations, build and expose the dialog window here.
 		return nil
@@ -96,7 +103,7 @@ public final class MicroseasonsView: ScreenSaverView {
             let style = NSMutableParagraphStyle()
             style.alignment = .center
             
-            let attributes: [NSAttributedStringKey : Any] = [
+            let attributes: [NSAttributedString.Key : Any] = [
                 .font: font,
                 .foregroundColor: color,
                 .paragraphStyle: style,
