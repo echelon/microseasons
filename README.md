@@ -3,17 +3,23 @@ Japanese Microseasons Screensaver
 A Mac screensaver written in Swift. Displays the current
 [Japanese microseason](http://www.nippon.com/en/features/h00124/).
 
+This is a good bootstrap project to see how Mac Screensavers are made
+and how they can be written in Swift (most web documentation applied
+only to Objective-C when I started this project).
+
 Installation
 ------------
-- Clone the repo and open in Xcode. (This was built on Xcode 10.2.1 on
-  macOS 10.14.5).
+- Clone the repo and open in Xcode. (This was built on Xcode 13.2.1 on
+  macOS 11.6.1).
 - Click build. You may need to change the signing settings.
 - The `Microseasons.saver` file will be dumped in
   `/Users/{you}/Library/Developer/Xcode/DerivedData/Microseasons-{hash}/Build/Products/Debug`.
-  You can open the library in finder by holding down the `Option` key
-  when clicking on the "Go" top menu. (Ugh, Macs, amirite?)
+  - Top Menu > Product > Show Build folder in Finder
 - Click to install.
 
+
+Problems? Did it crash at start?
+--------------------------------
 If it crashes, you don't have the required fonts installed.
 
 - See which fonts are named in the source.
