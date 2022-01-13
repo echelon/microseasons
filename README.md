@@ -22,7 +22,8 @@ Problems? Did it crash at start?
 --------------------------------
 If it crashes, you don't have the required fonts installed.
 
-- See which fonts are named in the source.
+- See which fonts are named in the source. (That appears to be 
+  "*Hannotate SC Regular*" at the time of this writing)
 - Open the system font dialog and select "Computer".
 - If the font is listed but not installed (ie. it's gray instead of black
   in the list), install it.
